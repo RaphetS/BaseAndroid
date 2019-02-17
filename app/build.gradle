@@ -49,4 +49,7 @@ dependencies {
     //Butterknife
     implementation 'com.jakewharton:butterknife:10.1.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
+    //log日志
+    implementation 'com.orhanobut:logger:2.2.0'
+
 }

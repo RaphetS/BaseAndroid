@@ -12,6 +12,9 @@
 package org.raphets.android.base;
 
 import android.app.Activity;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -19,6 +22,7 @@ import android.view.View;
 import android.view.WindowManager;
 
 
+import org.raphets.android.utils.ActivityUtils;
 import org.raphets.android.utils.TUtil;
 
 /**
@@ -38,6 +42,11 @@ public abstract class BaseAbstractActivity<T extends BasePresenter, E extends Ba
         this.setContentView(getLayoutId());
         mPresenter = TUtil.getT(this, 0);
         mModel = TUtil.getT(this, 1);
+
+        ActivityUtils.getInstance().pushActivity(this);
+        //强制 竖屏
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
         initPresenter();
         onCreate();
     }
@@ -62,6 +71,21 @@ public abstract class BaseAbstractActivity<T extends BasePresenter, E extends Ba
         }
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityUtils.getInstance().popActivity(this);
+    }
+
+
+    @Override
+    public Resources getResources() {
+        Resources resources = super.getResources();
+        Configuration configuration = new Configuration();
+        configuration.setToDefaults();
+        resources.updateConfiguration(configuration, resources.getDisplayMetrics());
+        return resources;
+    }
 
 
     //布局加载
