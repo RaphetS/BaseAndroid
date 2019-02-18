@@ -26,15 +26,13 @@ import java.util.List;
  * @邮箱：915611039@qq.com
  * @文件描述：BasePresenter基类
  */
-public  abstract class BasePresenter<T,E> {
-    public E mModel;
+public  abstract class BasePresenter<T> {
     public T mView;
     public Context mContext;
 
-    public void setVM(T v,Context  context, E m) {
+    public void setVM(Context  context,T v) {
         this.mView = v;
         this.mContext =context;
-        this.mModel = m;
     }
 
 

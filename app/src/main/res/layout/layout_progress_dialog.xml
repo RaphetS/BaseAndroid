@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ /****************************************************************************
+  ~ *
+  ~ Copyright (c) 2018.
+  ~ 武汉美美咖科技有限公司版权所有
+  ~ File Last Modified 17-11-7 上午10:37
+  ~ OLD MAN CO.. LTD. ALL RIGHTS RESERVED.
+  ~  *
+  ~  ***************************************************************************
+  -->
+
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="120dp"
+    android:layout_height="120dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/toast_view_bg"
+    android:gravity="center"
+    android:orientation="vertical">
+        <ProgressBar
+            android:id="@+id/progress_area_select_dlg"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:indeterminateTint="#aaa"/>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_message_progress_dialog"
+            tools:text="加载中"
+            android:visibility="gone"
+            android:layout_marginTop="10dp"
+            android:textColor="@android:color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

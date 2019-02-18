@@ -19,9 +19,4 @@ package org.raphets.android.base;
  */
 public interface BaseView {
 
-    //显示Loading()
-    void showLoading(String msg);
-
-    //隐藏 Loading()
-    void hideLoading();
 }
