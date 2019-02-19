@@ -15,7 +15,7 @@ import androidx.appcompat.widget.AppCompatEditText;
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class MainActivity extends BaseActivity<LoginPresenter>
+public class LoginActivity extends BaseActivity<LoginPresenter>
         implements LoginContract.View {
     @BindView(R.id.et_username)
     AppCompatEditText mEtUsername;
@@ -63,7 +63,7 @@ public class MainActivity extends BaseActivity<LoginPresenter>
         LoginRequest request = new LoginRequest();
         request.setUsername(username);
         request.setPassword(password);
-        request.setMode(2);
+//        request.setMode(2);
 
         mPresenter.login(request);
 

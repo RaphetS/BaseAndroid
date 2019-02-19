@@ -79,7 +79,7 @@ public abstract class BaseObserver<T> implements Observer<T> {
     @Override
     public void onError(Throwable e) {
         onRequestEnd();
-        Logger.e(e.toString());
+        Logger.e(e.getMessage());
         if (e instanceof retrofit2.HttpException) {
             //HTTP错误
             onException(ExceptionReason.BAD_NETWORK);

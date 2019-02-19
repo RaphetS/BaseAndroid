@@ -6,6 +6,7 @@ import com.orhanobut.logger.Logger;
 
 import org.raphets.android.base.BaseApplication;
 import org.raphets.android.base.BaseObserver;
+import org.raphets.android.http.BaseResponse;
 import org.raphets.android.http.RetrofitHelper;
 import org.raphets.android.http.api.ApiService;
 import org.raphets.android.ui.mvp.contract.LoginContract;
@@ -31,10 +32,10 @@ public class LoginPresenter extends LoginContract.Presenter {
                 .login(HashMapBeanTools.Obj2Map(msg))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new BaseObserver<LoginResult>() {
+                .subscribe(new BaseObserver<BaseResponse<LoginResult>>() {
                     @Override
-                    public void callBack(LoginResult response) {
-//                        Logger.i(response.toString());
+                    public void callBack(BaseResponse<LoginResult> response) {
+
                     }
                 });
 

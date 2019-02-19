@@ -24,7 +24,7 @@ public class BaseApplication extends Application {
     private void initLog() {
         FormatStrategy formatStrategy = PrettyFormatStrategy.newBuilder()
                 .showThreadInfo(false)
-                .tag("Log_Main")
+                .tag("Log_main")
                 .build();
         Logger.addLogAdapter(new AndroidLogAdapter(formatStrategy));
     }
