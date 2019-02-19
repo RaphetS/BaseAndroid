@@ -2,6 +2,8 @@ package org.raphets.android.ui.mvp.presenter;
 
 import android.util.Log;
 
+import com.orhanobut.logger.Logger;
+
 import org.raphets.android.base.BaseApplication;
 import org.raphets.android.base.BaseObserver;
 import org.raphets.android.http.RetrofitHelper;
@@ -32,7 +34,7 @@ public class LoginPresenter extends LoginContract.Presenter {
                 .subscribe(new BaseObserver<LoginResult>() {
                     @Override
                     public void callBack(LoginResult response) {
-                        Log.i("请求结果",response.toString());
+//                        Logger.i(response.toString());
                     }
                 });
 

@@ -42,7 +42,7 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     @Override
     protected void onCreate( Bundle arg0) {
         super.onCreate(arg0);
-        this.setContentView(getLayoutId());
+        setContentView(getLayoutId());
         mUnbinder = ButterKnife.bind(this);
         mPresenter = TUtil.getT(this, 0);
         ActivityUtils.getInstance().pushActivity(this);

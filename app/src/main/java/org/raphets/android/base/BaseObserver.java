@@ -10,6 +10,7 @@ import com.orhanobut.logger.Logger;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import org.json.JSONException;
+import org.raphets.android.utils.FastJsonTools;
 import org.raphets.android.utils.ProgressDialogUtil;
 import org.raphets.android.utils.ToastUitl;
 import java.io.InterruptedIOException;
@@ -69,13 +70,16 @@ public abstract class BaseObserver<T> implements Observer<T> {
     @Override
     public void onNext(T response) {
         onRequestEnd();
+        //打印结果日志
+        Logger.json(FastJsonTools.bean2Json(response));
+
         callBack(response);
     }
 
     @Override
     public void onError(Throwable e) {
         onRequestEnd();
-        Log.e("请求错误",e.toString());
+        Logger.e(e.toString());
         if (e instanceof retrofit2.HttpException) {
             //HTTP错误
             onException(ExceptionReason.BAD_NETWORK);

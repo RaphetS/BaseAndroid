@@ -102,25 +102,9 @@ public class LoginResult  {
                 this.username = username;
             }
 
-            @Override
-            public String toString() {
-                return "UserBean{" +
-                        "id='" + id + '\'' +
-                        ", nickname='" + nickname + '\'' +
-                        ", realname='" + realname + '\'' +
-                        ", username='" + username + '\'' +
-                        '}';
-            }
         }
     }
 
 
-    @Override
-    public String toString() {
-        return "LoginResult{" +
-                "data=" + data.toString() +
-                ", message='" + message + '\'' +
-                ", status_code=" + status_code +
-                '}';
-    }
+
 }
