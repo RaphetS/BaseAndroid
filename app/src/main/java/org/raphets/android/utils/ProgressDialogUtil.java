@@ -1,5 +1,6 @@
 package org.raphets.android.utils;
 
+import android.app.Activity;
 import android.content.Context;
 
 import org.raphets.android.widget.CustomProgressDialog;
@@ -27,9 +28,10 @@ public class ProgressDialogUtil {
     /**
      * 显示ProgressDialog
      */
-    public void showProgress(Context context) {
+    public void showProgress() {
+        Activity activity = ActivityUtils.getInstance().getCurrentActivity();
         if (mProgressDialog == null) {
-            mProgressDialog = new CustomProgressDialog(context);
+            mProgressDialog = new CustomProgressDialog(activity);
         }
         if (!mProgressDialog.isShowing()) {
             mProgressDialog.show();
@@ -39,9 +41,10 @@ public class ProgressDialogUtil {
     /**
      * 显示ProgressDialog
      */
-    public void showProgress(Context context,String message) {
+    public void showProgress(String message) {
+        Activity activity = ActivityUtils.getInstance().getCurrentActivity();
         if (mProgressDialog == null) {
-            mProgressDialog = new CustomProgressDialog(context,message);
+            mProgressDialog = new CustomProgressDialog(activity,message);
         }
         if (!mProgressDialog.isShowing()) {
             mProgressDialog.show();

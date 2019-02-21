@@ -160,9 +160,9 @@ public abstract class BaseObserver<T> implements Observer<T> {
     private void onRequestStart() {
         if (mShowLoading) {
             if (TextUtils.isEmpty(mMsg)) {
-                ProgressDialogUtil.getInstance().showProgress(mContext);
+                ProgressDialogUtil.getInstance().showProgress();
             }else {
-                ProgressDialogUtil.getInstance().showProgress(mContext,mMsg);
+                ProgressDialogUtil.getInstance().showProgress(mMsg);
             }
         }
     }
